@@ -175,7 +175,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.95;
+  opacity: 0.7;
   background-color: #F57F17;
   text-shadow: -1px -1px 0 #FFEB3B, 1px -1px 0 #FFEB3B, -1px 1px 0 #FFEB3B, 1px 1px 0 #FFEB3B;
 }
@@ -203,6 +203,33 @@ p {
   color: white;
   font-weight: bolder;
 }
+@media (max-width: 500px) {
+  .navigation {
+    padding: 2rem;
+    padding-top: 5rem;
+    height: 10rem;
+  }
+  .navigation h1 {
+    font-family: 'Modak', cursive;
+    color: black;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .navigation nav {
+    display: flex;
+    justify-content: center;
+  }
+  .navigation nav a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    padding: 2rem;
+  }
+  .navigation nav a:hover {
+    color: white;
+    font-weight: bolder;
+  }
+}
 footer {
   color: #22283B;
   background: #f4f4f4;
@@ -212,6 +239,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+header {
+  display: flex;
+  width: 80rem;
+}
+header img {
+  height: auto;
 }
 .container {
   margin-top: 10rem;

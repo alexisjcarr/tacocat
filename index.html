@@ -9,17 +9,34 @@
     <title>TacoCat</title>
 
     <link href="https://fonts.googleapis.com/css?family=Russo+One|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="css/index.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+    <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
 </head>
 
 <body>
 
     <div class="navigation">
-        <h1>TacoCat</h1>
+        <h1>TacoCat <i class="fas fa-cat"></i> </h1>
         <nav>
             <a href="#">Home</a>
             <a href="#">About Us</a>
@@ -27,10 +44,8 @@
             <a href="#">Contact Us</a>
         </nav>
     </div>
-    <div class="container">
-        <header>
 
-        </header>
+    <div class="container">
         <p>Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm
             in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it
             don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it
