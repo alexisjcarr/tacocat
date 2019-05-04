@@ -222,6 +222,7 @@ p {
     font-size: 1.2rem;
     text-decoration: none;
     padding: 2rem;
+    padding-top: 0rem;
   }
   .navigation nav a:hover {
     color: white;
@@ -276,6 +277,11 @@ footer {
 }
 .container .app button:hover {
   background-color: #FFF9C4;
+}
+.container .app #mapholder {
+  text-align: center;
+  width: 70%;
+  height: auto;
 }
 @media (max-width: 500px) {
   .container .app button {
