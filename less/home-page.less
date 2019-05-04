@@ -1,0 +1,65 @@
+.container {
+  margin-top: 10rem;
+  padding: 3rem;
+  background-color: @yellow300;
+  color: #403C1D;
+
+  .top-content {
+    p {
+      text-align: justify;
+      color: #403C1D;
+    }
+    h3 {
+      text-align: center;
+      color: @yellow700;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+        1px 1px 0 black;
+    }
+  }
+
+  .app {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+
+    p {
+        color: #403C1D;
+    }
+
+    h3 {
+      //   text-align: center;
+      color: @yellow700;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+        1px 1px 0 black;
+      margin-bottom: 3rem;
+    }
+
+    button {
+      font-size: 1.5rem;
+      padding: 2rem 5rem;
+      border: 2px solid @yellow800;
+      border-radius: 12px;
+      background-color: @yellow500;
+
+      &:hover {
+        background-color: @yellow100;
+        cursor: pointer;
+      }
+    }
+
+    #mapholder {
+      text-align: center;
+      width: 70%;
+      height: auto;
+    }
+  }
+
+  @media @phone {
+      .app {
+          button {
+              width: 100%;
+          }
+      }
+  }
+}
