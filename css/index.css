@@ -137,6 +137,7 @@ table {
 }
 html {
   font-size: 62.5%;
+  background-color: #FFF176;
 }
 html,
 body {
@@ -175,13 +176,13 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.9;
   background-color: #F57F17;
   text-shadow: -1px -1px 0 #FFEB3B, 1px -1px 0 #FFEB3B, -1px 1px 0 #FFEB3B, 1px 1px 0 #FFEB3B;
 }
 .navigation h1 {
   font-family: 'Modak', cursive;
-  color: black;
+  color: #403C1D;
   font-size: 5rem;
   text-align: center;
 }
@@ -194,7 +195,7 @@ p {
 .navigation nav a {
   font-size: 1.5rem;
   text-decoration: none;
-  color: black;
+  color: #403C1D;
   padding: 5rem;
   padding-top: 0rem;
   padding-bottom: 0rem;
@@ -240,14 +241,47 @@ footer {
   justify-content: center;
   align-items: center;
 }
-header {
-  display: flex;
-  width: 80rem;
-}
-header img {
-  height: auto;
-}
 .container {
   margin-top: 10rem;
+  padding: 3rem;
+  background-color: #FFF176;
+  color: #403C1D;
+}
+.container .top-content p {
+  text-align: justify;
+  color: #403C1D;
+}
+.container .top-content h3 {
+  text-align: center;
+  color: #FBC02D;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+.container .app {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.container .app p {
+  color: #403C1D;
+}
+.container .app h3 {
+  color: #FBC02D;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  margin-bottom: 3rem;
+}
+.container .app button {
+  font-size: 1.5rem;
+  padding: 2rem 5rem;
+  border: 2px solid #F9A825;
+  border-radius: 12px;
+  background-color: #FFEB3B;
+}
+.container .app button:hover {
   background-color: #FFF9C4;
+}
+@media (max-width: 500px) {
+  .container .app button {
+    width: 100%;
+  }
 }
