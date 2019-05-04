@@ -278,6 +278,7 @@ footer {
 }
 .container .app button:hover {
   background-color: #FFF9C4;
+  cursor: pointer;
 }
 .container .app #mapholder {
   text-align: center;
