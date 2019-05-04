@@ -4,17 +4,19 @@ const apiKey =
   "rJuKdTen_ktUx0Mls6culJDA0P3yXXP5FoajDMiozWFFJOcxfgNejA-LL5ejEt17ihVzEvduWdvVs9Nmb-RD0IIyZwOfiHPl415Rm2t-tS1-8Ezyat6J1f3PWoZfXHYx";
 
 // get coordinates via html geolocation api
-var map_ = document.querySelector(".mapholder");
+var map_ = document.querySelector(".container .app .mapholder");
 
-function getLocation() {
+function getLocation(e) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
     map_.innerHTML = "Geolocation is not supported by this browser.";
   }
+  console.log(e);
 }
 
 function showPosition(position) {
+    map_.innerHTML.style.fontSize = '2rem';
   map_.innerHTML =
     "Latitude: " +
     position.coords.latitude +
