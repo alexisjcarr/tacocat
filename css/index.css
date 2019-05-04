@@ -172,6 +172,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
   height: 10rem;
   position: fixed;
   top: 0;
