@@ -1,8 +1,9 @@
 const https = require("https");
 
 // Yelp API querying
-const clientKey = 'Tk50ZkP7y0dKQSX3FZ77Bw';
-const apiKey = 'rJuKdTen_ktUx0Mls6culJDA0P3yXXP5FoajDMiozWFFJOcxfgNejA-LL5ejEt17ihVzEvduWdvVs9Nmb-RD0IIyZwOfiHPl415Rm2t-tS1-8Ezyat6J1f3PWoZfXHYx';
+const clientKey = "Tk50ZkP7y0dKQSX3FZ77Bw";
+const apiKey =
+    "rJuKdTen_ktUx0Mls6culJDA0P3yXXP5FoajDMiozWFFJOcxfgNejA-LL5ejEt17ihVzEvduWdvVs9Nmb-RD0IIyZwOfiHPl415Rm2t-tS1-8Ezyat6J1f3PWoZfXHYx";
 
 // const request = new XMLHttpRequest();
 // request.open('GET', `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=tacos`);
@@ -23,26 +24,32 @@ const apiKey = 'rJuKdTen_ktUx0Mls6culJDA0P3yXXP5FoajDMiozWFFJOcxfgNejA-LL5ejEt17
 
 // request.send()
 
-const lat =  30.588059799999996;
+const lat = 30.588059799999996;
 const long = -96.3230157;
 
 const options = {
-    hostname: 'api.yelp.com',
+    hostname: "api.yelp.com",
     path: `/v3/businesses/search?term=tacos&latitude=${lat}&longitude=${long}`,
 
     headers: {
         Authorization: `Bearer ${apiKey}`
     }
-}
+};
 
-https.get(options, (res) => {
-  console.log('statusCode:', res.statusCode);
-  console.log('headers:', res.headers);
+https
+    .get(options, res => {
+        let data = "";
 
-  res.on('data', (d) => {
-    console.log(d);
-  });
+        // it's coming in in buffer chunks
+        // so we lump all of it into "data" up there
+        res.on("data", chunk => {
+            data += chunk;
+        });
 
-}).on('error', (e) => {
-  console.error(e);
-});
+        // Once the buffer's done, it sends this 'end' signal
+        // This is where we can use JSON.parse() to parse the buffer data into something human readable
+        res.on("end", () => console.log(JSON.parse(data)));
+    })
+    .on("error", e => {
+        console.error(e);
+    });
