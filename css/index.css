@@ -211,8 +211,6 @@ p {
     height: 10rem;
   }
   .navigation h1 {
-    font-family: 'Modak', cursive;
-    color: black;
     font-size: 3rem;
     text-align: center;
   }
@@ -223,7 +221,6 @@ p {
   .navigation nav a {
     font-size: 1.2rem;
     text-decoration: none;
-    color: black;
     padding: 2rem;
   }
   .navigation nav a:hover {
