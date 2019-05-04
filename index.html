@@ -1,118 +1,143 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>TacoCat</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Russo+One|Ubuntu"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Russo+One|Ubuntu" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="css/index.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="navigation">
-      <h1>TacoCat <i class="fas fa-cat"></i></h1>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact Us</a>
-      </nav>
+        <h1>TacoCat <i class="fas fa-cat"></i></h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact Us</a>
+        </nav>
     </div>
 
     <div class="container">
-      <section class="top-content">
-        <h3>Hi! I'm TacoCat, your friendly feline taco detective!</h3>
-        <br />
-        <p>
-          Normally, both your asses would be dead as fucking fried chicken, but
-          you happen to pull this shit while I'm in a transitional period so I
-          don't wanna kill you, I wanna help you. But I can't give you this
-          case, it don't belong to me. Besides, I've already been through too
-          much shit this morning over this case to hand it over to your dumb
-          ass.
-        </p>
-        <br /><br />
-        <h3>How I work</h3>
-        <br />
-        <p>
-          Well, the way they make shows is, they make one show. That show's
-          called a pilot. Then they show that show to the people who make shows,
-          and on the strength of that one show they decide if they're going to
-          make more shows. Some pilots get picked and become television
-          programs. Some don't, become nothing. She starred in one of the ones
-          that became nothing.
-        </p>
-      </section>
+        <section class="top-content">
+            <h3>Hi! I'm TacoCat, your friendly feline taco detective!</h3>
+            <br />
+            <p>
+                Normally, both your asses would be dead as fucking fried chicken, but
+                you happen to pull this shit while I'm in a transitional period so I
+                don't wanna kill you, I wanna help you. But I can't give you this
+                case, it don't belong to me. Besides, I've already been through too
+                much shit this morning over this case to hand it over to your dumb
+                ass.
+            </p>
+            <br /><br />
+            <h3>How I work</h3>
+            <br />
+            <p>
+                Well, the way they make shows is, they make one show. That show's
+                called a pilot. Then they show that show to the people who make shows,
+                and on the strength of that one show they decide if they're going to
+                make more shows. Some pilots get picked and become television
+                programs. Some don't, become nothing. She starred in one of the ones
+                that became nothing.
+            </p>
+        </section>
 
-      <section class="app">
-        <h3>Let me find tacos for you!</h3>
-        <br />
-        <button onclick="getLocation()">Start sniffing</button>
-        <br /><br />
-        <div id="mapholder"></div>
+        <section class="app">
+            <h3>Let me find tacos for you!</h3>
+            <br />
+            <button onclick="getLocation()">Start sniffing</button>
+            <br /><br />
+            <div id="mapholder"></div>
 
-        <script>
-          var x = document.getElementById("demo");
+            <script>
+                var x = document.getElementById("demo");
 
-          function getLocation() {
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-              x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-          }
+                function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+                        x.innerHTML = "Geolocation is not supported by this browser.";
+                    }
+                }
 
-          function showPosition(position) {
-            var latlon =
-              position.coords.latitude + "," + position.coords.longitude;
+                function showPosition(position) {
+                    var latlon =
+                        position.coords.latitude + "," + position.coords.longitude;
 
-            var img_url =
-              "https://maps.googleapis.com/maps/api/staticmap?center=" +
-              latlon +
-              "&zoom=14&size=400x300&sensor=false&key=AIzaSyD9x4RyqdjQYmR6tGEoL5K8i_wa14Put0U ";
+                    var img_url =
+                        "https://maps.googleapis.com/maps/api/staticmap?center=" +
+                        latlon +
+                        "&zoom=14&size=400x300&sensor=false&key=AIzaSyD9x4RyqdjQYmR6tGEoL5K8i_wa14Put0U ";
 
-            document.getElementById("mapholder").innerHTML =
-              "<img src='" + img_url + "'>";
-          }
+                    document.getElementById("mapholder").innerHTML =
+                        "<img src='" + img_url + "'>";
+                }
 
-          function showError(error) {
-            switch (error.code) {
-              case error.PERMISSION_DENIED:
-                x.innerHTML = "User denied the request for Geolocation.";
-                break;
-              case error.POSITION_UNAVAILABLE:
-                x.innerHTML = "Location information is unavailable.";
-                break;
-              case error.TIMEOUT:
-                x.innerHTML = "The request to get user location timed out.";
-                break;
-              case error.UNKNOWN_ERROR:
-                x.innerHTML = "An unknown error occurred.";
-                break;
-            }
-          }
-        </script>
-      </section>
+                function showError(error) {
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            x.innerHTML = "User denied the request for Geolocation.";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            x.innerHTML = "Location information is unavailable.";
+                            break;
+                        case error.TIMEOUT:
+                            x.innerHTML = "The request to get user location timed out.";
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            x.innerHTML = "An unknown error occurred.";
+                            break;
+                    }
+                }
 
-      <footer>
-        <p>Copyright Tacocat 2019</p>
-      </footer>
+                const apiKey =
+                    "rJuKdTen_ktUx0Mls6culJDA0P3yXXP5FoajDMiozWFFJOcxfgNejA-LL5ejEt17ihVzEvduWdvVs9Nmb-RD0IIyZwOfiHPl415Rm2t-tS1-8Ezyat6J1f3PWoZfXHYx";
+
+                fetch(
+                        `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=tacos&location=${location}&sort_by=${sortBy}`, {
+                            headers: {
+                                Authorization: `Bearer ${apiKey}`
+                            }
+                        }
+                    )
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(jsonResponse => {
+                            if (jsonResponse.businesses) {
+                                return jsonResponse.businesses.map(business => {
+                                    return {
+                                        id: business.id,
+                                        imageSrc: business.image_url,
+                                        name: business.name,
+                                        address: business.location.address1,
+                                        city: business.location.city,
+                                        state: business.location.state,
+                                        zipCode: business.location.zip_code,
+                                        category: business.categories[0].title,
+                                        rating: business.rating,
+                                        reviewCount: business.review_count
+                                    };
+                                });
+            </script>
+        </section>
+
+        <footer>
+            <p>Copyright Tacocat 2019</p>
+        </footer>
     </div>
-  </body>
+</body>
+
 </html>
