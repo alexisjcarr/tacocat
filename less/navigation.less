@@ -1,0 +1,42 @@
+.navigation {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 10rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.95;
+  background-color: @yellow900;
+  text-shadow: -1px -1px 0 @yellow500, 1px -1px 0 @yellow500,
+    -1px 1px 0 @yellow500, 1px 1px 0 @yellow500;
+
+  h1 {
+    font-family: @header-font;
+    color: black;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 1rem;
+
+    a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: black;
+      padding: 5rem;
+      padding-top: 0rem;
+      padding-bottom: 0rem;
+
+      &:hover {
+        color: white;
+        font-weight: bolder;
+      }
+    }
+  }
+}
