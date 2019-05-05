@@ -61,25 +61,6 @@
             <button onclick="getLocation()">Start sniffing</button>
             <br /><br />
             <div class="mapholder"><h1></h1></div>
-            <script>
-                var map_ = document.querySelector(".container .app .mapholder h1");
-
-                function getLocation() {
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(showPosition);
-                    } else {
-                        map_.innerHTML = "Geolocation is not supported by this browser.";
-                    }
-                }
-
-                function showPosition(position) {
-                    map_.innerHTML =
-                        "Latitude: " +
-                        position.coords.latitude +
-                        "<br>Longitude: " +
-                        position.coords.longitude;
-                }
-            </script>
         </section>
 
         <footer>
