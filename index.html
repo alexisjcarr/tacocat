@@ -14,8 +14,8 @@
     <link href="css/index.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+          <![endif]-->
     <script src='index.js'></script>
 </head>
 
@@ -24,66 +24,47 @@
         <h1>TacoCat <i class="fas fa-cat"></i></h1>
         <nav>
             <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact Us</a>
+            <a href="#about">About</a>
+            <a href="#">Swag (coming soon)</a>
         </nav>
     </div>
 
     <div class="container">
         <section class="top-content">
             <h3>Hi! I'm TacoCat, your friendly feline taco detective!</h3>
-            <br />
-            <p>
-                Normally, both your asses would be dead as fucking fried chicken, but
-                you happen to pull this shit while I'm in a transitional period so I
-                don't wanna kill you, I wanna help you. But I can't give you this
-                case, it don't belong to me. Besides, I've already been through too
-                much shit this morning over this case to hand it over to your dumb
-                ass.
-            </p>
+            <!--             <br />
+                  <p>
+                      Normally, both your asses would be dead as fucking fried chicken, but
+                      you happen to pull this shit while I'm in a transitional period so I
+                      don't wanna kill you, I wanna help you. But I can't give you this
+                      case, it don't belong to me. Besides, I've already been through too
+                      much shit this morning over this case to hand it over to your dumb
+                      ass.
+                  </p> -->
             <br /><br />
-            <h3>How I work</h3>
+            <h3 id='about'>How I work:</h3>
             <br />
-            <p>
-                Well, the way they make shows is, they make one show. That show's
-                called a pilot. Then they show that show to the people who make shows,
-                and on the strength of that one show they decide if they're going to
-                make more shows. Some pilots get picked and become television
-                programs. Some don't, become nothing. She starred in one of the ones
-                that became nothing.
-            </p>
+            <p>I love tacos more than your average cat. If you find your tummy grumbling and realize that you’re
+                fiending for some tacos anytime of the day or night, all you need to do is pet me by pushing the button
+                below! I’ll crawl all over your city to find the taco restaurants nearest to you!</p><br>
+
+            <p>I’m not the neatest with presenting all of my hard work right now. It’s really hard to write when you
+                don’t have opposable thumbs! Feel free to give me and my development team suggestions on how I can
+                improve!</p>
         </section>
 
         <section class="app">
             <h3>Let me find tacos for you!</h3>
             <br />
-            <button onclick="getLocation()">Start sniffing</button>
+            <button onclick="getLocation()">Pet me right meow. Plz.</button>
             <br /><br />
-            <div class="mapholder"><h1></h1></div>
-            <script>
-                var map_ = document.querySelector(".container .app .mapholder h1");
-
-                function getLocation() {
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(showPosition);
-                    } else {
-                        map_.innerHTML = "Geolocation is not supported by this browser.";
-                    }
-                }
-
-                function showPosition(position) {
-                    map_.innerHTML =
-                        "Latitude: " +
-                        position.coords.latitude +
-                        "<br>Longitude: " +
-                        position.coords.longitude;
-                }
-            </script>
+            <div class="mapholder">
+                <h1></h1>
+            </div>
         </section>
 
         <footer>
-            <p>Copyright Tacocat 2019</p>
+            <p>Copyright &lt;Alexis Carr/&gt; 2019</p>
         </footer>
     </div>
 </body>

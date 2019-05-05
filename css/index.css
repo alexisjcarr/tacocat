@@ -141,7 +141,7 @@ html {
 }
 html,
 body {
-  font-family: 'Russo One', sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: black;
 }
 h1,
@@ -149,7 +149,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Russo One', sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: black;
 }
 h2 {
@@ -260,6 +260,8 @@ footer {
   margin-bottom: 2rem;
   margin-top: 2rem;
   text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2rem;
 }
 .container .app p {
   color: #403C1D;
@@ -281,9 +283,11 @@ footer {
   cursor: pointer;
 }
 .container .app #mapholder {
-  text-align: center;
   width: 70%;
   height: auto;
+}
+.container .app #mapholder h1 {
+  font-size: 2rem;
 }
 @media (max-width: 500px) {
   .container .app button {
