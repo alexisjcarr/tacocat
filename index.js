@@ -23,7 +23,11 @@ const makeRequest = (latitude, longitude) => {
     const data = JSON.parse(this.responseText);
 
     const restaurants = data.businesses.map(taco => {
-      return [taco.name,`, ${taco.distance} meters away, `, `${taco.location.address1}; `];
+      return [
+        taco.name,
+        `, ${taco.distance} meters away, `,
+        `${taco.location.address1}; `
+      ];
     });
 
     const ans = [];
@@ -32,7 +36,7 @@ const makeRequest = (latitude, longitude) => {
       for (j = 0; j < 3; j++) {
         console.log(restaurants[i][j]);
         ans.push(restaurants[i][j]);
-        map_.innerHTML += '\n' + restaurants[i][j] + '\n';
+        map_.innerHTML += "\n" + restaurants[i][j] + "\n";
       }
     }
 
@@ -52,9 +56,8 @@ function showPosition(position) {
   //   position.coords.longitude;
 
   const req = makeRequest(position.coords.latitude, position.coords.longitude);
-  map_.innerHTML = req;
+  // map_.innerHTML = req;
 }
-
 
 // function findTacos(lat, long) {
 //     // Yelp API querying with https (for deployment)
@@ -110,6 +113,3 @@ function showPosition(position) {
 //   .on("error", e => {
 //     console.error(e);
 //   });
-
-
-
